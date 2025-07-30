@@ -15,6 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 connectDB();
 
 app.use('/api/products', require('./routes/productRoutes'));
+app.use('/api/authors', require('./routes/authorRoutes'));
 
 mongoose.connection.once('open', () => {
     app.listen(PORT, () => {
